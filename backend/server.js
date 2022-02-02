@@ -7,10 +7,15 @@ import dotenv from 'dotenv'
 // import path from 'path';
 // import {fileURLToPath} from 'url';
 
-// const path = require('path');
+// const p = require('path');
 
 // const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+// const __dirname = p.dirname(__filename);
+import { fileURLToPath } from 'url';
+import { dirname, path } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config();
 
@@ -53,6 +58,12 @@ app.use('/api/products', productRouter);
 //     res.send('Server is ready');
 //   });
 // }
+
+app.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 
 //error catcher
