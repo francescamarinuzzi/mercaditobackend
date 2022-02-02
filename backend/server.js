@@ -4,15 +4,15 @@ import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRouter.js';
 import dotenv from 'dotenv'
-// import path from 'path';
+import path from 'path';
 // import {fileURLToPath} from 'url';
 
-// const p = require('path');
+//const path = require('path');
 
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = p.dirname(__filename);
 import { fileURLToPath } from 'url';
-import { dirname, path } from 'path';
+import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
