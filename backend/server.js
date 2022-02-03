@@ -5,6 +5,7 @@ import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRouter.js';
 import dotenv from 'dotenv'
 import path from 'path';
+import cors from 'cors';
 // import {fileURLToPath} from 'url';
 
 //const path = require('path');
@@ -19,8 +20,10 @@ const __dirname = dirname(__filename);
 
 dotenv.config();
 
+//var cors = require('cors')
 const app = express();
 app.use(express.json());
+app.use(cors())
 //mongoose.connect('mongodb://localhost/mercadito');
 mongoose.connect('mongodb+srv://adminuser:VvkSN5Mw7jM3YqiZ@cluster0.kod3y.mongodb.net/mercadito?retryWrites=true&w=majority');
 
